@@ -1,4 +1,9 @@
 import { Book } from "./book";
+import { Student } from "./user";
+
+////////////////
+// Interfaces //
+////////////////
 
 export interface Loan {
     book: Book;
@@ -6,3 +11,9 @@ export interface Loan {
     date: Date;
     status: LoanStatus;
 }
+
+///////////
+// Types //
+///////////
+
+export type LoanStatus = "ongoing" | "returned";
