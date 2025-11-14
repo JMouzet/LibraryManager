@@ -17,3 +17,11 @@ export interface Book {
 ///////////
 
 export type BookCategory = "novel" | "history" | "science" | "poetry";
+
+///////////////
+// Functions //
+///////////////
+
+export function isValidCategory(cat: BookCategory): boolean {
+    return ["novel", "history", "science", "poetry"].includes(cat);
+}
