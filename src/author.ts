@@ -2,7 +2,7 @@
 // Interfaces //
 ////////////////
 
-interface Author {
+export interface Author {
     id: number,
     name: string,
     birthYear?: number,
