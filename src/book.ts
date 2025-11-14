@@ -5,5 +5,7 @@ export interface Book {
     title: string;
     author: Author;
     available: boolean;
-    category: string[];
+    category: BookCategory[];
 }
+
+export type BookCategory = "novel" | "history" | "science" | "poetry";
