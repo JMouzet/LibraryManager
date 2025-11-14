@@ -1,5 +1,6 @@
 import { Library } from "./library";
 import { Author } from "./author";
+import { User, Student, Librarian } from "./user";
 import { Loan } from "./loan";
 
 //test 3 auteurs / books
@@ -48,6 +49,21 @@ library.addBook({
     category: ["novel"]
 });
 
+const student1: Student = new Student("Jean", "Dupont", 20);
+const student2: Student = new Student("Marie", "Martin", 25);
+const student3: Student = new Student("Paul", "Durand", 23);
+const librarian: Librarian = new Librarian("Lucas", "Fernandez", 35);
+const users: User[] = [student1, student2, student3, librarian];
+users.forEach(user => {
+    if (user instanceof Student) {
+        user.study();
+    }
+
+    if (user instanceof Librarian) {
+        user.manage();
+    }
+})
+
 // Création de 3 emprunts de test
 
 export const loan1: Loan = {
@@ -58,7 +74,7 @@ export const loan1: Loan = {
         available: false,
         category: ["novel"]
     },
-    student: { id: 1, name: "Jean Dupont" },
+    student: student1,
     date: new Date("2024-01-15"),
     status: "ongoing"
 };
@@ -71,7 +87,7 @@ export const loan2: Loan = {
         available: false,
         category: ["novel"]
     },
-    student: { id: 2, name: "Marie Martin" },
+    student: student2,
     date: new Date("2024-02-01"),
     status: "ongoing"
 };
@@ -84,7 +100,7 @@ export const loan3: Loan = {
         available: true,
         category: ["history"]
     },
-    student: { id: 3, name: "Paul Durand" },
+    student: student3,
     date: new Date("2024-01-20"),
     status: "returned"
 };
