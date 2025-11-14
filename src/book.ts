@@ -1,5 +1,9 @@
 import { Author } from "./author";
 
+////////////////
+// Interfaces //
+////////////////
+
 export interface Book {
     id: number;
     title: string;
@@ -7,5 +11,9 @@ export interface Book {
     available: boolean;
     category: BookCategory[];
 }
+
+///////////
+// Types //
+///////////
 
 export type BookCategory = "novel" | "history" | "science" | "poetry";
